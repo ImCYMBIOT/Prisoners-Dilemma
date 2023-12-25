@@ -33,12 +33,14 @@ def tit_for_tat(player_history, opponent_last_move):
 def always_defect(player_history, opponent_last_move):
     return 'D'
 
+def random_strategy(player_history, opponent_last_move):
+    return random.choice(['C', 'D'])
 def main():
     rounds = 50
 
     # Instantiate players with their strategies
     player1 = Player("Player 1", tit_for_tat)
-    player2 = Player("Player 2", always_defect)
+    player2 = Player("Player 2", random_strategy)
 
     for round_num in range(1, rounds + 1):
         # Players make their moves
